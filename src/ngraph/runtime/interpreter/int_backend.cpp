@@ -244,8 +244,8 @@ bool runtime::interpreter::INTBackend::call(shared_ptr<Function> function,
 
 void runtime::interpreter::INTBackend::generate_calls(const element::Type& type,
                                                       const NodeWrapper& op,
-                                                      const vector<void*>& outputs,
-                                                      const vector<const void*>& inputs,
+                                                      const vector<std::shared_ptr<HostTensor>>& outputs,
+                                                      const vector<std::shared_ptr<HostTensor>>& inputs,
                                                       FunctionInstance& instance)
 {
     stringstream ss;
